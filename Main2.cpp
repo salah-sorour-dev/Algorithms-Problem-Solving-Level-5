@@ -15,10 +15,20 @@ int main()
     MydblLinkedList.InsertAtBeginning(2);
     MydblLinkedList.InsertAtBeginning(1);
 
-    cout << "\nLinked List Contenet:\n";
+    cout << "\nLinked List Content:\n";
     MydblLinkedList.PrintList();
 
-    clsDblLinkedList<int>::Node* N1 = MydblLinkedList.Find(2);
+
+    cout << "\nNumber of items in the linked list = " << MydblLinkedList.Size();
+
+
+
+
+
+
+
+
+    /*clsDblLinkedList<int>::Node* N1 = MydblLinkedList.Find(2);
 
     if (N1 != NULL)
         cout << "\nNode with value 2 is Found :-)\n";
@@ -44,7 +54,7 @@ int main()
 
     cout << "\nAfter Deleting Last Node:\n";
     MydblLinkedList.DeleteLastNode();
-    MydblLinkedList.PrintList();
+    MydblLinkedList.PrintList();*/
 
     system("pause>0");
     return 0;
