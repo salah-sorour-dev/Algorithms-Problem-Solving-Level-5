@@ -242,5 +242,25 @@ public:
         }
     }
 
+    Node* GetNode(int Index)
+    {
+        int Counter = 0;
+
+        if (Index > _Size == 1 || Index < 0)
+            return NULL;
+
+        Node* Current = head;
+        while (Current != NULL && (Current->next != NULL))
+        {
+            if (Counter == Index)
+                break;
+
+            Current = Current->next;
+            Counter++;
+        }
+
+        return Current;
+    }
+
 };
 
