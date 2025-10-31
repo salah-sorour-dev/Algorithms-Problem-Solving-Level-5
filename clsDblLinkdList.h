@@ -82,12 +82,6 @@ public:
     void InsertAfter(Node* current, T value) {
 
 
-        /*  1 - Create a new node with the desired value.
-             2-Set the next pointer of the new node to the next node of the current node.
-             3-Set the previous pointer of the new node to the current node.
-             4-Set the next pointer of the current node to the new node.
-             5-Set the previous pointer of the next node to the new node(if it exists).
-        */
 
         Node* newNode = new Node();
         newNode->value = value;
@@ -279,6 +273,19 @@ public:
         if (ItemNode != NULL)
         {
             ItemNode->value = NewValue;
+            return true;
+        }
+        else
+            return false;
+    }
+
+    bool InsertAfter(int Index, T Value)
+    {
+        Node* ItemNode = GetNode(Index);
+
+        if (ItemNode != NULL)
+        {
+            InsertAfter(ItemNode, Value);
             return true;
         }
         else
