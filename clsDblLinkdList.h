@@ -246,7 +246,7 @@ public:
     {
         int Counter = 0;
 
-        if (Index > _Size == 1 || Index < 0)
+        if (Index > _Size - 1 || Index < 0)
             return NULL;
 
         Node* Current = head;
@@ -260,6 +260,16 @@ public:
         }
 
         return Current;
+    }
+
+    int GetItem(int Index)
+    {
+        Node* ItemNode = GetNode(Index);
+
+        if (ItemNode == NULL)
+            return NULL;
+        else
+            return ItemNode->value;
     }
 
 };
