@@ -1,58 +1,58 @@
-
-
 #include <iostream>
 #include "clsDblLinkdList.h"
 #include "clsMyQueue.h"
+#include "clsMyStack.h"
+
 using namespace std;
 
 int main()
 {
     
-    clsMyQueue <int> MyQueue;
+    clsMyStack <int> MyStack;
 
-    MyQueue.push(10);
-    MyQueue.push(20);
-    MyQueue.push(30);
-    MyQueue.push(40);
-    MyQueue.push(50);
+    MyStack.push(10);
+    MyStack.push(20);
+    MyStack.push(30);
+    MyStack.push(40);
+    MyStack.push(50);
 
-    cout << "\nQueue: \n";
-    MyQueue.Print();
+    cout << "\nStack: \n";
+    MyStack.Print();
 
-    cout << "\nQueue Size: " << MyQueue.Size();
-    cout << "\nQueue Front: " << MyQueue.front();
-    cout << "\nQueue Back: " << MyQueue.back();
+    cout << "\nStack Size: " << MyStack.Size();
+    cout << "\nStack Front: " << MyStack.Top();
+    cout << "\nStack Back: " << MyStack.Bottom();
 
-    MyQueue.pop();
+    MyStack.pop();
 
-    cout << "\n\nQueue after pop() : \n";
-    MyQueue.Print();
+    cout << "\n\nStack after pop() : \n";
+    MyStack.Print();
 
-    cout << "\n\nItem(2) : " << MyQueue.GetItem(2);
+    cout << "\n\nItem(2) : " << MyStack.GetItem(2);
 
-    MyQueue.Reverse();
-    cout << "\n\nQueue after reverse() : \n";
-    MyQueue.Print();
+    MyStack.Reverse();
+    cout << "\n\nStack after reverse() : \n";
+    MyStack.Print();
 
-    MyQueue.UpdateItem(2, 600);
-    cout << "\n\nQueue after Updating Item(2) to 600 : \n";
-    MyQueue.Print();
+    MyStack.UpdateItem(2, 600);
+    cout << "\n\nStack after Updating Item(2) to 600 : \n";
+    MyStack.Print();
 
-    MyQueue.InsertAfter(2, 800);
-    cout << "\n\nQueue after Inserting 800 after Item(2) : \n";
-    MyQueue.Print();
+    MyStack.InsertAfter(2, 800);
+    cout << "\n\nStack after Inserting 800 after Item(2) : \n";
+    MyStack.Print();
 
-    MyQueue.InsertAtFront(1000);
-    cout << "\n\nQueue after Inserting 1000 at front : \n";
-    MyQueue.Print();
+    MyStack.InsertAtFront(1000);
+    cout << "\n\nStack after Inserting 1000 at front : \n";
+    MyStack.Print();
 
-    MyQueue.InsertAtBack(2000);
-    cout << "\n\nQueue after Inserting 2000 at Back : \n";
-    MyQueue.Print();
+    MyStack.InsertAtBack(2000);
+    cout << "\n\nStack after Inserting 2000 at Back : \n";
+    MyStack.Print();
 
-    MyQueue.Clear();
-    cout << "\n\nQueue after Clear : \n";
-    MyQueue.Print();
+    MyStack.Clear();
+    cout << "\n\nStack after Clear : \n";
+    MyStack.Print();
 
 
     system("pause>0");
