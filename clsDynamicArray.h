@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "clsMyQueue.h"
+#include "clsDblLinkdList.h"
 
 using namespace std;
 
@@ -75,6 +75,35 @@ public:
 		delete[] OriginalArray;
 		OriginalArray = _TempArray;
 
+	}
+
+	T GetItem(int Index)
+	{
+		return OriginalArray[Index];
+	}
+
+	void Reverse()
+	{
+		_TempArray = new T[_Size];
+
+		int Counter = 0;
+
+		for (int i = _Size - 1; i >= 0; i--)
+		{
+			_TempArray[Counter] = OriginalArray[i];
+			Counter++;
+		}
+
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
+	}
+
+	void Clear()
+	{
+		_Size = 0;
+		_TempArray = new T[0];
+		delete[] OriginalArray;
+		OriginalArray = _TempArray;
 	}
 
 	void PrintList()
