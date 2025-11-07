@@ -23,18 +23,18 @@ int main()
 
     MyDynamicArray.PrintList();
 
-    MyDynamicArray.DeleteFirstItem();
-    cout << "\nArray Items after deleting first item: \n";
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    MyDynamicArray.PrintList();
+    int Index = MyDynamicArray.Find(30);
+    if (Index == -1)
+        cout << "\nItem was not Found :-(\n";
+    else
+        cout << "\n30 is found at index : " << Index;
 
-    MyDynamicArray.DeleteLastItem();
-    cout << "\nArray Items after deleting Last item: \n";
+    MyDynamicArray.DeleteItem(30);
+    cout << "\nArray Items after deleting 30: \n";
     cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
     MyDynamicArray.PrintList();
     
-
-
+    
     system("pause>0");
     return 0;
 }
