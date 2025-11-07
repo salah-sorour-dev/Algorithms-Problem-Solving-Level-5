@@ -136,6 +136,16 @@ public:
 
 	}
 
+	void DeleteFirstItem()
+	{
+		DeleteItemAt(0);
+	}
+
+	void DeleteLastItem()
+	{
+		DeleteItemAt(_Size - 1);
+	}
+
 
 	void PrintList()
 	{
