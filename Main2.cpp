@@ -3,45 +3,58 @@
 #include "clsMyQueue.h"
 #include "clsMyStack.h"
 #include "clsDynamicArray.h"
+#include "clsMyQueueArr.h"
 
 using namespace std;
 
 int main()
 {
     
-    clsDynamicArray <int> MyDynamicArray(5);
+    clsMyQueueArr <int> MyQueue;
 
-    MyDynamicArray.SetItem(0, 10);
-    MyDynamicArray.SetItem(1, 20);
-    MyDynamicArray.SetItem(2, 30);
-    MyDynamicArray.SetItem(3, 40);
-    MyDynamicArray.SetItem(4, 50);
+    MyQueue.push(10);
+    MyQueue.push(20);
+    MyQueue.push(30);
+    MyQueue.push(40);
+    MyQueue.push(50);
 
-    cout << "\nIs Empty?  " << MyDynamicArray.IsEmpty();
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    cout << "\nArray Items: \n";
+    cout << "\nQueue: \n";
+    MyQueue.Print();
 
-    MyDynamicArray.PrintList();
+    cout << "\nQueue Size: " << MyQueue.Size();
+    cout << "\nQueue Front: " << MyQueue.front();
+    cout << "\nQueue Back: " << MyQueue.back();
 
-    MyDynamicArray.InsertAtBeginning(400);
-    cout << "\nArray Items after insert 400 at Beginning: ";
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    MyDynamicArray.PrintList();
+    MyQueue.pop();
+    cout << "\n\nQueue after pop() : \n";
+    MyQueue.Print();
 
-    MyDynamicArray.InsertBefore(2, 500);
-    cout << "\nArray Items after insert 500 before index 2: ";
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    MyDynamicArray.PrintList();
+    cout << "\n\nItem(2) : " << MyQueue.GetItem(2);
 
-    MyDynamicArray.InsertAfter(2, 600);
-    cout << "\nArray Items after insert 600 after index 2: ";
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    MyDynamicArray.PrintList();
+    MyQueue.Reverse();
+    cout << "\n\nQueue after reverse() : \n";
+    MyQueue.Print();
 
-    MyDynamicArray.InsertAtEnd(800);
-    cout << "\nArray Items after insert 800 at end: ";
-    cout << "\nArray Size: " << MyDynamicArray.Size() << "\n";
-    MyDynamicArray.PrintList();
+    MyQueue.UpdateItem(2, 600);
+    cout << "\n\nQueue after updating item(2) to 600 : \n";
+    MyQueue.Print();
+
+
+    MyQueue.InsertAfter(2, 800);
+    cout << "\n\nArray Items after inserting 800 after item(2) : \n";
+    MyQueue.Print();
+
+    MyQueue.InsertAtFront(1000);
+    cout << "\n\nArray Items after inserting 1000 at front : \n";
+    MyQueue.Print();
+
+    MyQueue.InsertAtBack(2000);
+    cout << "\n\nArray Items after inserting 2000 at back : \n";
+    MyQueue.Print();
+
+    MyQueue.Clear();
+    cout << "\n\nQueue after Clear() : \n";
+    MyQueue.Print();
     
     system("pause>0");
     return 0;
